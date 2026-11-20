@@ -31,7 +31,7 @@ ol.steps>li{margin:.35em 0}
 <li>Es <b>opcional</b>. Sin él, Glanceboard funciona exactamente igual que ahora, por Bluetooth.</li>
 <li>Usa la <b>API oficial de Tesla</b> con <b>tu propia cuenta de desarrollador de Tesla</b>, solo en los momentos en que el coche no envía los datos por Bluetooth.</li>
 <li>Tesla regala <b>10 $ al mes</b> a cada cuenta. Glanceboard se para sola antes de gastarlos, así que <b>con un uso normal no pagas nada</b>.</li>
-<li>Tesla pide una <b>tarjeta</b> como requisito para dar de alta la cuenta. Con el tope de Glanceboard y el límite de gasto de 10 $ que pondrás en el paso 4, <b>no se cobra nada</b>.</li>
+<li>Tesla pide una <b>tarjeta</b> como requisito para dar de alta la cuenta. Con el tope de Glanceboard y el límite de gasto de 9 € que pondrás en el paso 4, <b>no se cobra nada</b>.</li>
 <li>Al llegar al tope del mes, Glanceboard <b>vuelve a usar solo el Bluetooth</b>, con sus limitaciones, hasta el mes siguiente.</li>
 <li>Se configura <b>una sola vez</b> y lleva unos <b>30 minutos</b>.</li>
 </ul></div>
@@ -88,7 +88,7 @@ ol.steps>li{margin:.35em 0}
 <figure><a href="img/tesla-precios.jpg"><img src="img/tesla-precios.jpg" alt="Precios de Tesla: 150.000 señales por dólar, 1.000 órdenes por dólar, 500 consultas de datos por dólar, 50 despertares por dólar" width="620" height="234" loading="lazy"></a><figcaption>Precios publicados por Tesla (noviembre de 2026). Glanceboard solo usa «Data», las consultas de datos.</figcaption></figure>
 <div class="ok"><p><b>Por qué no pagarás nada:</b></p><ul style="margin:.3em 0 0;padding-left:1.2em">
 <li>Glanceboard cuenta las consultas del mes y <b>se para sola a las 4.500</b>, que son 9 $, por debajo de los 10 $ gratuitos.</li>
-<li>Además, en el paso 4 pondrás en Tesla un <b>límite de gasto de 10 $</b>. Si por lo que fuera se llegara a él, Tesla corta la API hasta el mes siguiente en lugar de cobrar más.</li>
+<li>Además, en el paso 4 pondrás en Tesla un <b>límite de gasto de 9 €</b>. Tesla lo pide en euros, y 9 € quedan justo por debajo de los 10 $ gratuitos. Si por lo que fuera se llegara a él, Tesla corta la API hasta el mes siguiente en lugar de cobrar más.</li>
 <li>La <b>tarjeta</b> es un requisito de Tesla para tener la cuenta activa. Mientras el gasto no pase de los 10 $ gratuitos, no se te cobra nada.</li>
 </ul></div>
 <p>Al llegar al tope, Glanceboard <b>sigue funcionando solo con el Bluetooth</b>, con sus limitaciones, hasta que empieza el mes siguiente. En Ajustes verás cuántas consultas llevas.</p>
@@ -149,23 +149,23 @@ ol.steps>li{margin:.35em 0}
 <div class="tw"><table>
 <tr><th>Campo</th><th>Qué poner</th></tr>
 <tr><td>Nombre de la aplicación</td><td>El que te propone Glanceboard, por ejemplo <code>Glanceboard-7K3Q</code>. Tesla no admite nombres repetidos.</td></tr>
-<tr><td>Descripción y uso</td><td><i>Uso personal con mi propio coche: leer velocidad y potencia cuando el Bluetooth no las envía.</i></td></tr>
-<tr><td>Allowed origin (origen permitido)</td><td><code>https://tuusuario.github.io</code>, o tu web</td></tr>
-<tr><td>Redirect URI (dirección de vuelta)</td><td><code>https://tuusuario.github.io/callback/</code>, o la de tu web. Glanceboard te la deja lista para copiar.</td></tr>
-<tr><td>Permisos (scopes)</td><td>Solo <b>Vehicle Information</b> (información del vehículo). <b>No</b> marques ubicación, órdenes ni carga.</td></tr>
+<tr><td>Descripción y finalidad de uso</td><td><i>Uso personal con mi propio coche: leer velocidad y potencia cuando el Bluetooth no las envía.</i></td></tr>
+<tr><td>URL de origen permitidas</td><td><code>https://tuusuario.github.io</code>, sin barra al final, o tu web</td></tr>
+<tr><td>URI de redireccionamiento permitidos</td><td><code>https://tuusuario.github.io/callback/</code>, o la de tu web. Glanceboard te la deja lista para copiar.</td></tr>
+<tr><td>API y ámbitos</td><td>Solo <b>Información del vehículo</b>. <b>No</b> marques información del perfil, ubicación del vehículo, comandos ni gestión de la carga.</td></tr>
 </table></div></li>
-<li>Envía la solicitud. Tesla la revisa; normalmente la aprueba en poco tiempo, pero puede tardar.</li>
+<li>En la primera pantalla, <b>Tipo de registro</b>, elige <b>Solo para mí</b>. En <b>Tipo de concesión de OAuth</b> deja <b>Código de autorización y comunicación entre sistemas</b>.</li><li>Al final se piden la dirección de facturación y la tarjeta (paso 4). Al enviarla, la aplicación aparece como <b>Activa</b>: en nuestra prueba, Tesla la aprobó al momento.</li>
 </ol>
 <div class="pend">Capturas pendientes: formulario de creación de la aplicación en developer.tesla.com, con los campos de arriba. Se añadirán con la prueba en una cuenta real, con los datos personales tapados.</div>
 
-<h2 id="paso4"><span class="step">Paso 4</span>Pon la tarjeta y el límite de gasto</h2>
+<h2 id="paso4"><span class="step">Paso 4</span>Pon la tarjeta y el límite de gasto (9 €)</h2>
 <ol class="steps">
-<li>En el panel de tu aplicación, entra en <b>Billing and usage</b> (facturación y uso).</li>
-<li>Pulsa <b>Manage Payment</b> y añade la tarjeta. Es un requisito de Tesla: sin forma de pago, Tesla desactiva la aplicación.</li>
-<li>Pulsa <b>Update Limit</b> y pon <b>10</b> como límite de gasto mensual.</li>
+<li>Es la última pantalla del alta, <b>Detalles de facturación</b>.</li>
+<li>Rellena la dirección de facturación y añade la tarjeta. Es un requisito de Tesla: sin forma de pago, el límite se queda en 0 y la aplicación no funciona.</li>
+<li>En <b>Límite de facturación</b> deja <b>Límite personalizado</b> y pon <b>9</b> en <b>Límite (EUR)</b>. Pulsa <b>Enviar</b>, no «Omitir y enviar»: omitirlo deja el límite en 0 y la aplicación desactivada. Si ya la habías creado, se cambia en <b>Ver facturación y uso</b>.</li>
 </ol>
-<div class="ok"><p>Con este límite y el tope de 4.500 consultas de Glanceboard, el gasto se queda dentro de los 10 $ gratuitos de cada mes y <b>no se cobra nada</b>. Tesla te avisa por correo si se llega al 80 % del límite.</p></div>
-<div class="pend">Captura pendiente: página «Billing and usage» con los botones «Manage Payment» y «Update Limit». Se añadirá con la prueba en una cuenta real, sin datos de la tarjeta.</div>
+<div class="ok"><p>Con este límite y el tope de 4.500 consultas de Glanceboard, el gasto se queda dentro de los 10 $ (unos 9,2 €) gratuitos de cada mes y <b>no se cobra nada</b>. Tesla te avisa por correo si se llega al 80 % del límite.</p></div>
+<div class="pend">Captura pendiente: «Detalles de facturación» con el límite personalizado en 9 €, sin datos de la tarjeta ni de la dirección.</div>
 
 <h2 id="paso5"><span class="step">Paso 5</span>Copia tus credenciales</h2>
 <ol class="steps">
