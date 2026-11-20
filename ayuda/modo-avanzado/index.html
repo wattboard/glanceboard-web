@@ -26,15 +26,15 @@ ol.steps>li{margin:.35em 0}
 <h1>Modo avanzado: datos de Tesla cuando falla el Bluetooth</h1>
 <p class="mut">Guía paso a paso · Glanceboard</p>
 
-<div class="warn"><p><b>Próximamente.</b> El modo avanzado está en preparación y llegará en una próxima versión de Glanceboard. Esta guía explica cómo funcionará y qué habrá que hacer, para que puedas decidir con calma si te interesa.</p></div>
+<div class="warn"><p><b>Próximamente.</b> El modo avanzado está en preparación y llegará en una próxima versión de Glanceboard. Esta guía explica cómo funcionará y qué hay que hacer. <b>Los pasos 1 a 4 ya puedes hacerlos</b>, para tenerlo todo listo cuando salga.</p></div>
 
 <div class="box"><p><b>En resumen</b></p><ul>
 <li>Es <b>opcional</b>. Sin él, Glanceboard funciona exactamente igual que ahora, por Bluetooth.</li>
 <li>Usa la <b>API oficial de Tesla</b> con <b>tu propia cuenta de desarrollador de Tesla</b>, solo en los momentos en que el coche no envía los datos por Bluetooth.</li>
 <li>Tesla regala <b>10 $ al mes</b> a cada cuenta. Glanceboard se para sola antes de gastarlos, así que <b>con un uso normal no pagas nada</b>.</li>
-<li>Tesla pide una <b>tarjeta</b> como requisito para dar de alta la cuenta. Con el tope de Glanceboard y el límite de gasto de 9 € que pondrás en el paso 4, <b>no se cobra nada</b>.</li>
+<li>Tesla pide una <b>tarjeta</b> como requisito para dar de alta la cuenta. Con el tope de Glanceboard y el límite de gasto de 9 € que pondrás en el paso 3, <b>no se cobra nada</b>.</li>
 <li>Al llegar al tope del mes, Glanceboard <b>vuelve a usar solo el Bluetooth</b>, con sus limitaciones, hasta el mes siguiente.</li>
-<li>Se configura <b>una sola vez</b> y lleva unos <b>30 minutos</b>.</li>
+<li>Se configura <b>una sola vez</b> y lleva unos <b>30 minutos</b>. Puedes adelantar ya la mayor parte.</li>
 </ul></div>
 
 <ul class="toc noprint">
@@ -44,11 +44,11 @@ ol.steps>li{margin:.35em 0}
 <li><a href="#coste">Cuánto cuesta</a></li>
 <li><a href="#km">Cuántos kilómetros cubre</a></li>
 <li><a href="#necesitas">Lo que necesitas</a></li>
-<li><a href="#paso1">Paso 1 · Crea tu clave</a></li>
-<li><a href="#paso2">Paso 2 · Publica la clave</a></li>
-<li><a href="#paso3">Paso 3 · Crea tu aplicación en Tesla</a></li>
-<li><a href="#paso4">Paso 4 · Tarjeta y límite de gasto</a></li>
-<li><a href="#paso5">Paso 5 · Copia tus credenciales</a></li>
+<li><a href="#paso1">Paso 1 · Tu web en GitHub</a></li>
+<li><a href="#paso2">Paso 2 · Tu aplicación en Tesla</a></li>
+<li><a href="#paso3">Paso 3 · Tarjeta y límite</a></li>
+<li><a href="#paso4">Paso 4 · Tus credenciales</a></li>
+<li><a href="#paso5">Paso 5 · Tu clave</a></li>
 <li><a href="#paso6">Paso 6 · Conecta</a></li>
 <li><a href="#despues">Después</a></li>
 <li><a href="#problemas">Problemas frecuentes</a></li>
@@ -89,7 +89,7 @@ ol.steps>li{margin:.35em 0}
 <figure><a href="img/tesla-precios.jpg"><img src="img/tesla-precios.jpg" alt="Precios de Tesla: 150.000 señales por dólar, 1.000 órdenes por dólar, 500 consultas de datos por dólar, 50 despertares por dólar" width="620" height="234" loading="lazy"></a><figcaption>Precios publicados por Tesla (noviembre de 2026). Glanceboard solo usa «Data», las consultas de datos.</figcaption></figure>
 <div class="ok"><p><b>Por qué no pagarás nada:</b></p><ul style="margin:.3em 0 0;padding-left:1.2em">
 <li>Glanceboard cuenta las consultas del mes y <b>se para sola a las 4.500</b>, que son 9 $, por debajo de los 10 $ gratuitos.</li>
-<li>Además, en el paso 4 pondrás en Tesla un <b>límite de gasto de 9 €</b>. Tesla lo pide en euros, y 9 € quedan justo por debajo de los 10 $ gratuitos. Si por lo que fuera se llegara a él, Tesla corta la API hasta el mes siguiente en lugar de cobrar más.</li>
+<li>Además, en el paso 3 pondrás en Tesla un <b>límite de gasto de 9 €</b>. Tesla lo pide en euros, y 9 € quedan justo por debajo de los 10 $ gratuitos. Si por lo que fuera se llegara a él, Tesla corta la API hasta el mes siguiente en lugar de cobrar más.</li>
 <li>La <b>tarjeta</b> es un requisito de Tesla para tener la cuenta activa. Mientras el gasto no pase de los 10 $ gratuitos, no se te cobra nada.</li>
 </ul></div>
 <p>Al llegar al tope, Glanceboard <b>sigue funcionando solo con el Bluetooth</b>, con sus limitaciones, hasta que empieza el mes siguiente. En Ajustes verás cuántas consultas llevas.</p>
@@ -109,80 +109,83 @@ ol.steps>li{margin:.35em 0}
 <li>Tu <b>cuenta de Tesla</b>, la misma de la app de Tesla, con la <b>verificación en dos pasos</b> activada.</li>
 <li>Una <b>tarjeta</b> para el requisito de Tesla. No se cobra nada; mira <a href="#coste">Cuánto cuesta</a>.</li>
 <li>Una <b>cuenta gratuita de GitHub</b> (<a href="https://github.com/signup">github.com/signup</a>), o una web propia si ya tienes una.</li>
-<li>Glanceboard en el móvil, con la versión que traiga el modo avanzado, y unos <b>30 minutos</b>. Mejor desde un ordenador para los pasos 2 a 4.</li>
+<li>Unos <b>30 minutos</b>, mejor desde un ordenador para los pasos 1 a 4. Para los pasos 5 y 6, Glanceboard con la versión que traiga el modo avanzado.</li>
 </ul>
 <div class="box"><p><b>¿Por qué hace falta una web?</b> Tesla exige que cada aplicación publique una «clave pública» en una dirección web suya, para comprobar quién la ha creado. Con GitHub Pages esa web es gratuita y tuya: <code>https://tuusuario.github.io</code>. Glanceboard no tiene servidor y no ve nada de esto.</p></div>
 
-<h2 id="paso1"><span class="step">Paso 1</span>Crea tu clave en Glanceboard</h2>
-<ol class="steps">
-<li>En Glanceboard, abre <b>Ajustes › Modo avanzado</b> y pulsa <b>Crear clave</b>.</li>
-<li>La app genera un archivo llamado <code>com.tesla.3p.public-key.pem</code>. Pulsa <b>Compartir</b> y guárdalo donde lo encuentres desde el ordenador, por ejemplo en iCloud Drive, Google Drive o enviándotelo por correo.</li>
-</ol>
-<p>Es una clave <b>pública</b>, y es normal que se publique. La parte privada se queda guardada en tu móvil y no sale de él.</p>
-<div class="pend">Captura pendiente: pantalla «Modo avanzado» de Glanceboard con el botón «Crear clave». Se añadirá con la versión que traiga el modo avanzado.</div>
+<div class="ok" id="ya"><p><b>Puedes adelantar ya la primera parte</b> (pasos 1 a 4): la web en GitHub, tu aplicación en Tesla y el límite de gasto. Así, cuando salga la versión con el modo avanzado, solo te quedarán los pasos 5 y 6, que se hacen desde Glanceboard en un par de minutos.</p></div>
 
-<h2 id="paso2"><span class="step">Paso 2</span>Publica la clave en tu web</h2>
-<h3>Con GitHub (gratis)</h3>
+<h2 id="paso1"><span class="step">Paso 1</span>Crea tu web en GitHub</h2>
+<p class="mut">Ya disponible. Si tienes una web propia, mira el final de este paso.</p>
 <ol class="steps">
-<li>Entra en GitHub con tu cuenta y abre la <b>plantilla de Glanceboard</b>: <code>github.com/wattboard/glanceboard-tesla-key</code>. Pulsa <b>Use this template › Create a new repository</b>.</li>
+<li>Entra en GitHub con tu cuenta (o créala gratis en <a href="https://github.com/signup">github.com/signup</a>) y abre la <b>plantilla de Glanceboard</b>: <a href="https://github.com/wattboard/glanceboard-tesla-key">github.com/wattboard/glanceboard-tesla-key</a>. Pulsa <b>Use this template › Create a new repository</b>.</li>
 <li>En <b>Repository name</b> escribe <b>exactamente</b> <code>tuusuario.github.io</code>, con tu nombre de usuario de GitHub. Deja <b>Public</b> marcado y pulsa <b>Create repository</b>.
 <figure><a href="img/github-nuevo-repo.jpg"><img src="img/github-nuevo-repo.jpg" alt="GitHub, crear repositorio: el nombre del repositorio es el usuario seguido de .github.io" width="500" height="235" loading="lazy"></a><figcaption>El nombre del repositorio tiene que ser tu usuario seguido de <code>.github.io</code>. En la imagen, el usuario es «wattboard».</figcaption></figure></li>
-<li>En tu repositorio nuevo, entra en la carpeta <code>.well-known</code> y luego en <code>appspecific</code>. Pulsa <b>Add file › Upload files</b>, arrastra el archivo del paso 1 y pulsa <b>Commit changes</b>. Si GitHub pregunta si quieres reemplazar el archivo vacío de la plantilla, di que sí.
-<figure><a href="img/github-subir.jpg"><img src="img/github-subir.jpg" alt="GitHub, subir archivos: zona para arrastrar y botón Commit changes" width="800" height="490" loading="lazy"></a><figcaption>Arrastra el archivo a la zona de arriba y pulsa «Commit changes».</figcaption></figure></li>
 <li>Ve a <b>Settings › Pages</b>. En <b>Build and deployment</b>, elige <b>Deploy from a branch</b>, la rama <b>main</b> y la carpeta <b>/ (root)</b>, y pulsa <b>Save</b>. Al cabo de uno o dos minutos aparece «Your site is live at https://tuusuario.github.io».
 <figure><a href="img/github-pages.jpg"><img src="img/github-pages.jpg" alt="GitHub, ajustes de Pages: publicar desde la rama main y la carpeta raíz" width="605" height="260" loading="lazy"></a><figcaption>Settings › Pages: publicar desde la rama «main» y la carpeta «/ (root)».</figcaption></figure></li>
 </ol>
 <div class="box"><p><b>Qué trae la plantilla:</b></p><ul style="margin:.3em 0 0;padding-left:1.2em">
 <li><code>.nojekyll</code>: sin este archivo, GitHub no publica las carpetas que empiezan por punto, y Tesla no encontraría la clave. No lo borres.</li>
-<li><code>callback/</code>: una página que, al terminar el inicio de sesión con Tesla, devuelve el control a Glanceboard. No guarda ni envía nada.</li>
-<li><code>.well-known/appspecific/</code>: la carpeta donde va tu clave.</li>
+<li><code>callback/</code>: una página que, al terminar el inicio de sesión con Tesla, devuelve el control a Glanceboard. No guarda ni envía nada. Hace falta porque Tesla no admite volver directamente a una app.</li>
+<li><code>.well-known/appspecific/</code>: la carpeta donde irá tu clave (paso 5).</li>
 </ul></div>
 <h3>Con una web propia</h3>
-<p>Si ya tienes un dominio, sube los mismos archivos de la plantilla a tu web, de forma que estas dos direcciones funcionen:</p>
-<ul><li><code>https://tuweb/.well-known/appspecific/com.tesla.3p.public-key.pem</code></li><li><code>https://tuweb/callback/</code></li></ul>
-<h3>Comprueba que se ve</h3>
-<p>En Glanceboard, escribe la dirección de tu web (<code>https://tuusuario.github.io</code>) y pulsa <b>Comprobar</b>. La app confirma que Tesla podrá leer la clave. Si dice que no la encuentra, espera un par de minutos y vuelve a probar: mira <a href="#problemas">Problemas frecuentes</a>.</p>
+<p>Si ya tienes un dominio, sube los mismos archivos de la plantilla a tu web, de forma que <code>https://tuweb/callback/</code> funcione. La clave irá en <code>https://tuweb/.well-known/appspecific/com.tesla.3p.public-key.pem</code> (paso 5).</p>
 
-<h2 id="paso3"><span class="step">Paso 3</span>Crea tu aplicación en Tesla</h2>
+<h2 id="paso2"><span class="step">Paso 2</span>Crea tu aplicación en Tesla</h2>
+<p class="mut">Ya disponible.</p>
 <ol class="steps">
 <li>Entra en <a href="https://developer.tesla.com">developer.tesla.com</a> con <b>la misma cuenta de Tesla que usas con tu coche</b> (no hace falta crear otra) y pulsa <b>Crear nueva aplicación</b>.</li>
-<li>Rellena el formulario:
+<li>En <b>Tipo de registro</b>, elige <b>Solo para mí</b>.
+<figure class="phone"><a href="img/tesla-1-registro.jpg"><img src="img/tesla-1-registro.jpg" alt="Tesla, crear aplicación: tipo de registro Solo para mí" loading="lazy"></a><figcaption>Primera pantalla: «Solo para mí».</figcaption></figure></li>
+<li>Rellena los datos:
 <div class="tw"><table>
 <tr><th>Campo</th><th>Qué poner</th></tr>
 <tr><td>Nombre de la aplicación</td><td>El que te propone Glanceboard, por ejemplo <code>Glanceboard-7K3Q</code>. Tesla no admite nombres repetidos.</td></tr>
-<tr><td>Descripción y finalidad de uso</td><td><i>Uso personal con mi propio coche: leer velocidad y potencia cuando el Bluetooth no las envía.</i></td></tr>
-<tr><td>URL de origen permitidas</td><td><code>https://tuusuario.github.io</code>, sin barra al final, o tu web</td></tr>
+<tr><td>Descripción y finalidad de uso</td><td>Descripción: <i>Uso personal con mi propio coche: leer velocidad, potencia y cuentakilómetros cuando el Bluetooth del coche no los envía.</i><br>Finalidad de uso: <i>Uso personal, solo con mi vehículo, con la app Glanceboard: consultas puntuales de vehicle_data cuando el Bluetooth del coche no envía la velocidad y la potencia (por ejemplo, con una ruta puesta). Sin ubicación ni comandos.</i></td></tr>
+<tr><td>URL de origen permitidas</td><td><code>https://tuusuario.github.io</code>, o tu web</td></tr>
 <tr><td>URI de redireccionamiento permitidos</td><td><code>https://tuusuario.github.io/callback/</code>, o la de tu web. Glanceboard te la deja lista para copiar.</td></tr>
 <tr><td>API y ámbitos</td><td>Solo <b>Información del vehículo</b>. <b>No</b> marques información del perfil, ubicación del vehículo, comandos ni gestión de la carga.</td></tr>
-</table></div></li>
-<li>En la primera pantalla, <b>Tipo de registro</b>, elige <b>Solo para mí</b>. En <b>Tipo de concesión de OAuth</b> deja <b>Código de autorización y comunicación entre sistemas</b>.</li><li>Al final se piden la dirección de facturación y la tarjeta (paso 4). Al enviarla, la aplicación aparece como <b>Activa</b>: en nuestra prueba, Tesla la aprobó al momento.</li>
+</table></div>
+<figure class="phone"><a href="img/tesla-2-datos.jpg"><img src="img/tesla-2-datos.jpg" alt="Tesla: nombre, descripción y finalidad de uso de la aplicación" loading="lazy"></a><figcaption>Segunda pantalla: nombre, descripción y finalidad de uso.</figcaption></figure>
+<figure class="phone"><a href="img/tesla-3-oauth.jpg"><img src="img/tesla-3-oauth.jpg" alt="Tesla: tipo de concesión OAuth y direcciones permitidas" loading="lazy"></a><figcaption>Tercera pantalla: deja «Código de autorización y comunicación entre sistemas» y escribe tu web y la dirección de vuelta. La URL de retorno se deja vacía.</figcaption></figure>
+<figure class="phone"><a href="img/tesla-4-ambitos.jpg"><img src="img/tesla-4-ambitos.jpg" alt="Tesla: ámbitos, marcar solo Información del vehículo" loading="lazy"></a><figcaption>Cuarta pantalla: marca solo «Información del vehículo».</figcaption></figure></li>
 </ol>
-<figure class="phone"><a href="img/tesla-1-registro.jpg"><img src="img/tesla-1-registro.jpg" alt="Tesla, crear aplicación: tipo de registro Solo para mí" loading="lazy"></a><figcaption>Primera pantalla: «Solo para mí».</figcaption></figure><figure class="phone"><a href="img/tesla-2-datos.jpg"><img src="img/tesla-2-datos.jpg" alt="Tesla: nombre, descripción y finalidad de uso de la aplicación" loading="lazy"></a><figcaption>Segunda pantalla: nombre, descripción y finalidad de uso.</figcaption></figure><figure class="phone"><a href="img/tesla-3-oauth.jpg"><img src="img/tesla-3-oauth.jpg" alt="Tesla: tipo de concesión OAuth y direcciones permitidas" loading="lazy"></a><figcaption>Tercera pantalla: deja «Código de autorización y comunicación entre sistemas» y escribe tu web y la dirección de vuelta. La URL de retorno se deja vacía.</figcaption></figure><figure class="phone"><a href="img/tesla-4-ambitos.jpg"><img src="img/tesla-4-ambitos.jpg" alt="Tesla: ámbitos, marcar solo Información del vehículo" loading="lazy"></a><figcaption>Cuarta pantalla: marca solo «Información del vehículo».</figcaption></figure><p class="mut">Tesla no admite direcciones de vuelta del tipo <code>glanceboard://</code>: por eso la plantilla trae la página <code>callback/</code>.</p>
 
-<h2 id="paso4"><span class="step">Paso 4</span>Pon la tarjeta y el límite de gasto (9 €)</h2>
+<h2 id="paso3"><span class="step">Paso 3</span>Pon la tarjeta y el límite de gasto (9 €)</h2>
+<p class="mut">Ya disponible. Es la última pantalla del alta, <b>Detalles de facturación</b>.</p>
 <ol class="steps">
-<li>Es la última pantalla del alta, <b>Detalles de facturación</b>.</li>
 <li>Rellena la dirección de facturación y añade la tarjeta. Es un requisito de Tesla: sin forma de pago, el límite se queda en 0 y la aplicación no funciona.</li>
-<li>En <b>Límite de facturación</b> deja <b>Límite personalizado</b> y pon <b>9</b> en <b>Límite (EUR)</b>. Pulsa <b>Enviar</b>, no «Omitir y enviar»: omitirlo deja el límite en 0 y la aplicación desactivada. Si ya la habías creado, se cambia en <b>Ver facturación y uso</b>.</li>
+<li>En <b>Límite de facturación</b> deja <b>Límite personalizado</b> y pon <b>9</b> en <b>Límite (EUR)</b>. Pulsa <b>Enviar</b>, no «Omitir y enviar»: omitirlo deja el límite en 0. Si ya la habías creado, se cambia en <b>Ver facturación y uso</b>.</li>
 </ol>
 <div class="ok"><p>Con este límite y el tope de 4.500 consultas de Glanceboard, el gasto se queda dentro de los 10 $ (unos 9,2 €) gratuitos de cada mes y <b>no se cobra nada</b>. Tesla te avisa por correo si se llega al 80 % del límite.</p></div>
-<figure class="phone"><a href="img/tesla-5-limite.jpg"><img src="img/tesla-5-limite.jpg" alt="Tesla: límite de facturación personalizado en euros" loading="lazy"></a><figcaption>Última pantalla, debajo de la dirección y la tarjeta: «Límite personalizado» y 9 en «Límite (EUR)». Luego «Enviar».</figcaption></figure><figure class="phone"><a href="img/tesla-6-activa.jpg"><img src="img/tesla-6-activa.jpg" alt="Tesla: la aplicación aparece como Activa" loading="lazy"></a><figcaption>Al enviarla, tu aplicación aparece como «Activa». Desde «Ver detalles» llegas a sus credenciales (paso 5).</figcaption></figure>
+<figure class="phone"><a href="img/tesla-5-limite.jpg"><img src="img/tesla-5-limite.jpg" alt="Tesla: límite de facturación personalizado en euros" loading="lazy"></a><figcaption>Última pantalla, debajo de la dirección y la tarjeta: «Límite personalizado» y 9 en «Límite (EUR)». Luego «Enviar».</figcaption></figure>
+<figure class="phone"><a href="img/tesla-6-activa.jpg"><img src="img/tesla-6-activa.jpg" alt="Tesla: la aplicación aparece como Activa" loading="lazy"></a><figcaption>Al enviarla, tu aplicación aparece como «Activa». Desde «Ver detalles» llegas a sus credenciales (paso 5).</figcaption></figure>
 
-<h2 id="paso5"><span class="step">Paso 5</span>Copia tus credenciales</h2>
+<h2 id="paso4"><span class="step">Paso 4</span>Localiza tus credenciales</h2>
+<p class="mut">Ya disponible.</p>
+<p>En tu aplicación, pulsa <b>Ver detalles</b>. En <b>Credenciales y API</b> están el <b>ID de cliente</b> (Client ID) y el <b>secreto de cliente</b> (Client Secret). No hace falta copiarlos todavía: los pegarás en Glanceboard en el paso 6, y siempre puedes volver aquí a verlos.</p>
+<figure class="phone"><a href="img/tesla-7-credenciales.jpg"><img src="img/tesla-7-credenciales.jpg" alt="Tesla: Credenciales y API con el ID de cliente y el secreto de cliente" loading="lazy"></a><figcaption>«Ver detalles» › «Credenciales y API»: el ID de cliente y el secreto de cliente (el ojo lo muestra). En la imagen hay una segunda dirección de vuelta que usamos en nuestras pruebas; tú solo necesitas la de <code>/callback/</code>.</figcaption></figure>
+<div class="warn"><p>El <b>secreto de cliente</b> es como una contraseña: no lo compartas con nadie, no lo envíes por mensajes ni lo publiques en GitHub.</p></div>
+
+<h2 id="paso5"><span class="step">Paso 5</span>Crea tu clave y súbela a tu web</h2>
+<p class="mut">Con la versión de Glanceboard que traiga el modo avanzado.</p>
 <ol class="steps">
-<li>En tu aplicación, pulsa <b>Ver detalles</b>: ahí están el <b>Client ID</b> y el <b>Client Secret</b>.</li>
-<li>Cópialos y pégalos en Glanceboard, en <b>Ajustes › Modo avanzado</b>. Se guardan cifrados en tu móvil y <b>no salen de él</b>.</li>
+<li>En Glanceboard, abre <b>Ajustes › Modo avanzado</b> y pulsa <b>Crear clave</b>. La app genera un archivo llamado <code>com.tesla.3p.public-key.pem</code>. Pulsa <b>Compartir</b> y guárdalo donde lo encuentres desde el ordenador (iCloud Drive, Google Drive o por correo). Es una clave <b>pública</b>: la parte privada se queda en tu móvil y no sale de él.</li>
+<li>En tu repositorio <code>tuusuario.github.io</code>, entra en la carpeta <code>.well-known</code> y luego en <code>appspecific</code>. Pulsa <b>Add file › Upload files</b>, arrastra el archivo y pulsa <b>Commit changes</b>. Si GitHub pregunta si quieres reemplazar el archivo vacío de la plantilla, di que sí.
+<figure><a href="img/github-subir.jpg"><img src="img/github-subir.jpg" alt="GitHub, subir archivos: zona para arrastrar y botón Commit changes" width="800" height="490" loading="lazy"></a><figcaption>Arrastra el archivo a la zona de arriba y pulsa «Commit changes».</figcaption></figure></li>
+<li>En Glanceboard, escribe la dirección de tu web (<code>https://tuusuario.github.io</code>) y pulsa <b>Comprobar</b>. La app confirma que Tesla podrá leer la clave. GitHub puede tardar un par de minutos en publicarla.</li>
 </ol>
-<div class="warn"><p>El <b>Client Secret</b> es como una contraseña: no lo compartas con nadie ni lo publiques en GitHub.</p></div>
-<div class="pend">Captura pendiente: credenciales de la aplicación en developer.tesla.com, con los valores tapados.</div>
+<div class="pend"><b>En desarrollo</b><br>Pantalla «Modo avanzado» de Glanceboard con «Crear clave» y «Comprobar».</div>
 
-<h2 id="paso6"><span class="step">Paso 6</span>Conecta</h2>
+<h2 id="paso6"><span class="step">Paso 6</span>Pega tus credenciales y conecta</h2>
+<p class="mut">Con la versión de Glanceboard que traiga el modo avanzado.</p>
 <ol class="steps">
-<li>En Glanceboard, pulsa <b>Iniciar sesión con Tesla</b>.</li>
-<li>Se abre la página de Tesla. Entra con tu cuenta y acepta el permiso de información del vehículo.</li>
+<li>Copia el <b>ID de cliente</b> y el <b>secreto de cliente</b> del paso 4 y pégalos en Glanceboard, en <b>Ajustes › Modo avanzado</b>. Se guardan cifrados en tu móvil y <b>no salen de él</b>.</li>
+<li>Pulsa <b>Iniciar sesión con Tesla</b>. Se abre la página de Tesla: entra con tu cuenta y acepta el permiso de información del vehículo.</li>
 <li>Glanceboard registra tu web en Tesla, comprueba que todo funciona y te muestra <b>Listo</b>.</li>
 </ol>
-<div class="pend">Captura pendiente: pantalla «Listo» de Glanceboard con el contador de consultas del mes.</div>
+<div class="pend"><b>En desarrollo</b><br>Pantalla «Listo» de Glanceboard con el contador de consultas del mes.</div>
 
 <h2 id="despues">Después</h2>
 <ul>
@@ -197,17 +200,17 @@ ol.steps>li{margin:.35em 0}
 <h3>Glanceboard dice que no encuentra la clave</h3>
 <ul>
 <li>GitHub tarda unos minutos en publicar los cambios. Espera y vuelve a pulsar «Comprobar».</li>
-<li>Revisa que el repositorio se llama exactamente <code>tuusuario.github.io</code> y que Pages está activado (paso 2).</li>
+<li>Revisa que el repositorio se llama exactamente <code>tuusuario.github.io</code> y que Pages está activado (paso 1).</li>
 <li>Revisa que el archivo <code>.nojekyll</code> sigue en el repositorio y que la clave está en <code>.well-known/appspecific/</code> con el nombre <code>com.tesla.3p.public-key.pem</code>.</li>
 </ul>
 <h3>Tesla dice que el nombre de la aplicación ya existe</h3>
-<p>Pulsa «Otro nombre» en Glanceboard y usa el nuevo.</p>
+<p>Añade algo al final, por ejemplo tus iniciales: <code>Glanceboard-ZC</code>.</p>
 <h3>Tesla todavía no ha aprobado la aplicación</h3>
 <p>En nuestra prueba quedó activa al momento. Si a ti te sale pendiente, la aprobación es cosa de Tesla: Glanceboard sigue funcionando por Bluetooth mientras tanto, y cuando la apruebe sigues en el paso 5.</p>
 <h3>Me ha llegado un correo de facturación de Tesla</h3>
 <p>Tesla puede enviar avisos de facturación o de uso aunque no haya nada que pagar. Si alguna vez ves un importe distinto de 0, escríbenos con una captura (tapando tus datos) y lo revisamos.</p>
 <h3>He cambiado de móvil</h3>
-<p>La clave privada se queda en el móvil antiguo. En el nuevo, vuelve a crear la clave (paso 1) y sube el archivo nuevo a tu web en lugar del antiguo (paso 2). Tu aplicación de Tesla y tus credenciales siguen valiendo.</p>
+<p>La clave privada se queda en el móvil antiguo. En el nuevo, vuelve a crear la clave y sube el archivo nuevo a tu web en lugar del antiguo (paso 5). Tu aplicación de Tesla y tus credenciales siguen valiendo.</p>
 <h3>Glanceboard dice «Tope del mes alcanzado»</h3>
 <p>Hasta el día 1 del mes siguiente, Glanceboard usa solo el Bluetooth, con sus limitaciones: con una ruta puesta, la velocidad sale del GPS y el consumo puede salir como aproximado.</p>
 
