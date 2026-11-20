@@ -10,6 +10,7 @@ a{color:var(--acc)}.mut{color:var(--mut)}nav a{margin-right:1em}
 .ok{background:var(--ok);border-left:4px solid var(--okb);border-radius:8px;padding:12px 16px;margin:1em 0}
 .box p:first-child,.warn p:first-child,.ok p:first-child{margin-top:0}.box p:last-child,.warn p:last-child,.ok p:last-child{margin-bottom:0}
 figure{margin:1em 0 1.4em}figure img{display:block;max-width:100%;height:auto;border:1px solid var(--line);border-radius:10px}
+figure.phone img{max-width:min(100%,380px)}
 figcaption{font-size:.88rem;color:var(--mut);margin-top:.4em}
 .pend{border:2px dashed var(--line);border-radius:10px;padding:22px 16px;text-align:center;color:var(--mut);font-size:.92rem}
 table{border-collapse:collapse;width:100%;font-size:.95rem;margin:.6em 0}th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}th{font-weight:600}
@@ -144,7 +145,7 @@ ol.steps>li{margin:.35em 0}
 
 <h2 id="paso3"><span class="step">Paso 3</span>Crea tu aplicación en Tesla</h2>
 <ol class="steps">
-<li>Entra en <a href="https://developer.tesla.com">developer.tesla.com</a> con tu cuenta de Tesla y pulsa para crear una aplicación nueva.</li>
+<li>Entra en <a href="https://developer.tesla.com">developer.tesla.com</a> con <b>la misma cuenta de Tesla que usas con tu coche</b> (no hace falta crear otra) y pulsa <b>Crear nueva aplicación</b>.</li>
 <li>Rellena el formulario:
 <div class="tw"><table>
 <tr><th>Campo</th><th>Qué poner</th></tr>
@@ -156,7 +157,7 @@ ol.steps>li{margin:.35em 0}
 </table></div></li>
 <li>En la primera pantalla, <b>Tipo de registro</b>, elige <b>Solo para mí</b>. En <b>Tipo de concesión de OAuth</b> deja <b>Código de autorización y comunicación entre sistemas</b>.</li><li>Al final se piden la dirección de facturación y la tarjeta (paso 4). Al enviarla, la aplicación aparece como <b>Activa</b>: en nuestra prueba, Tesla la aprobó al momento.</li>
 </ol>
-<div class="pend">Capturas pendientes: formulario de creación de la aplicación en developer.tesla.com, con los campos de arriba. Se añadirán con la prueba en una cuenta real, con los datos personales tapados.</div>
+<figure class="phone"><a href="img/tesla-1-registro.jpg"><img src="img/tesla-1-registro.jpg" alt="Tesla, crear aplicación: tipo de registro Solo para mí" loading="lazy"></a><figcaption>Primera pantalla: «Solo para mí».</figcaption></figure><figure class="phone"><a href="img/tesla-2-datos.jpg"><img src="img/tesla-2-datos.jpg" alt="Tesla: nombre, descripción y finalidad de uso de la aplicación" loading="lazy"></a><figcaption>Segunda pantalla: nombre, descripción y finalidad de uso.</figcaption></figure><figure class="phone"><a href="img/tesla-3-oauth.jpg"><img src="img/tesla-3-oauth.jpg" alt="Tesla: tipo de concesión OAuth y direcciones permitidas" loading="lazy"></a><figcaption>Tercera pantalla: deja «Código de autorización y comunicación entre sistemas» y escribe tu web y la dirección de vuelta. La URL de retorno se deja vacía.</figcaption></figure><figure class="phone"><a href="img/tesla-4-ambitos.jpg"><img src="img/tesla-4-ambitos.jpg" alt="Tesla: ámbitos, marcar solo Información del vehículo" loading="lazy"></a><figcaption>Cuarta pantalla: marca solo «Información del vehículo».</figcaption></figure><p class="mut">Tesla no admite direcciones de vuelta del tipo <code>glanceboard://</code>: por eso la plantilla trae la página <code>callback/</code>.</p>
 
 <h2 id="paso4"><span class="step">Paso 4</span>Pon la tarjeta y el límite de gasto (9 €)</h2>
 <ol class="steps">
@@ -165,11 +166,11 @@ ol.steps>li{margin:.35em 0}
 <li>En <b>Límite de facturación</b> deja <b>Límite personalizado</b> y pon <b>9</b> en <b>Límite (EUR)</b>. Pulsa <b>Enviar</b>, no «Omitir y enviar»: omitirlo deja el límite en 0 y la aplicación desactivada. Si ya la habías creado, se cambia en <b>Ver facturación y uso</b>.</li>
 </ol>
 <div class="ok"><p>Con este límite y el tope de 4.500 consultas de Glanceboard, el gasto se queda dentro de los 10 $ (unos 9,2 €) gratuitos de cada mes y <b>no se cobra nada</b>. Tesla te avisa por correo si se llega al 80 % del límite.</p></div>
-<div class="pend">Captura pendiente: «Detalles de facturación» con el límite personalizado en 9 €, sin datos de la tarjeta ni de la dirección.</div>
+<figure class="phone"><a href="img/tesla-5-limite.jpg"><img src="img/tesla-5-limite.jpg" alt="Tesla: límite de facturación personalizado en euros" loading="lazy"></a><figcaption>Última pantalla, debajo de la dirección y la tarjeta: «Límite personalizado» y 9 en «Límite (EUR)». Luego «Enviar».</figcaption></figure><figure class="phone"><a href="img/tesla-6-activa.jpg"><img src="img/tesla-6-activa.jpg" alt="Tesla: la aplicación aparece como Activa" loading="lazy"></a><figcaption>Al enviarla, tu aplicación aparece como «Activa». Desde «Ver detalles» llegas a sus credenciales (paso 5).</figcaption></figure>
 
 <h2 id="paso5"><span class="step">Paso 5</span>Copia tus credenciales</h2>
 <ol class="steps">
-<li>Cuando Tesla apruebe la aplicación, en su panel verás el <b>Client ID</b> y el <b>Client Secret</b>.</li>
+<li>En tu aplicación, pulsa <b>Ver detalles</b>: ahí están el <b>Client ID</b> y el <b>Client Secret</b>.</li>
 <li>Cópialos y pégalos en Glanceboard, en <b>Ajustes › Modo avanzado</b>. Se guardan cifrados en tu móvil y <b>no salen de él</b>.</li>
 </ol>
 <div class="warn"><p>El <b>Client Secret</b> es como una contraseña: no lo compartas con nadie ni lo publiques en GitHub.</p></div>
@@ -202,7 +203,7 @@ ol.steps>li{margin:.35em 0}
 <h3>Tesla dice que el nombre de la aplicación ya existe</h3>
 <p>Pulsa «Otro nombre» en Glanceboard y usa el nuevo.</p>
 <h3>Tesla todavía no ha aprobado la aplicación</h3>
-<p>La aprobación es cosa de Tesla y a veces tarda. Glanceboard sigue funcionando por Bluetooth mientras tanto. Cuando la apruebe, sigue en el paso 5.</p>
+<p>En nuestra prueba quedó activa al momento. Si a ti te sale pendiente, la aprobación es cosa de Tesla: Glanceboard sigue funcionando por Bluetooth mientras tanto, y cuando la apruebe sigues en el paso 5.</p>
 <h3>Me ha llegado un correo de facturación de Tesla</h3>
 <p>Tesla puede enviar avisos de facturación o de uso aunque no haya nada que pagar. Si alguna vez ves un importe distinto de 0, escríbenos con una captura (tapando tus datos) y lo revisamos.</p>
 <h3>He cambiado de móvil</h3>
