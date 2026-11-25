@@ -84,8 +84,15 @@ ol.steps>li{margin:.35em 0}
 <li>Al volver, verás una marca verde. Activa <b>Usar el modo avanzado</b>.</li>
 <li>Pulsa <b>Comprobar conexión</b> (Glanceboard 107 o posterior). La app busca tu coche en la cuenta y pide una lectura a Tesla, sin despertarlo. Si el coche está dormido, solo confirma la sesión; para ver una lectura real, abre antes la app de Tesla o pulsa el botón dentro del coche.</li>
 </ol>
-<h3>Pegar un token en lugar de iniciar sesión</h3>
-<p>Si ya tienes un <b>token de actualización</b> («refresh token») de Tesla, por ejemplo el que usaste para configurar TeslaMate o uno sacado con una app de tokens de Tesla, pulsa <b>Pegar un token</b>, pégalo y pulsa <b>Usar este token</b>. Es un texto largo que empieza por <code>eyJ</code>.</p>
+<h3>¿Para qué sirve «Pegar un token»?</h3>
+<p><b>Normalmente no lo necesitas</b>: con <b>Iniciar sesión con Tesla</b> basta. «Pegar un token» es un <b>plan B</b> para estos casos:</p>
+<ul>
+<li><b>Tesla cambia o bloquea su página de inicio de sesión</b> dentro de las apps (ya ha pasado alguna vez). Mientras lo arreglamos, puedes conseguir el token por otro camino y pegarlo.</li>
+<li><b>Prefieres no escribir tu contraseña</b> en otra app y sacas el token por tu cuenta.</li>
+<li><b>La página de Tesla da problemas</b> con la verificación en dos pasos o con el captcha.</li>
+</ul>
+<p>Lo que se pega es el <b>token de actualización</b> («refresh token») de tu cuenta de Tesla: un texto largo que empieza por <code>eyJ</code>. Se puede sacar con una app de tokens de Tesla o es el que usaste para configurar TeslaMate. Pulsa <b>Pegar un token</b>, pégalo y pulsa <b>Usar este token</b>. Si Tesla lo acepta, verás la marca verde igual que al iniciar sesión.</p>
+<p class="mut">No vale el «token de acceso» (dura solo unas horas) ni la clave de cifrado de TeslaMate: tiene que ser el token de actualización.</p>
 <div class="box"><p><b>¿Afecta a TeslaMate?</b> No debería: varias apps pueden usar tokens de la misma cuenta a la vez, como TeslaMate y ABRP. Aun así, lo más limpio es <b>iniciar sesión con Tesla</b> en Glanceboard, que crea su propio token y no toca el de TeslaMate.</p></div>
 <div class="warn"><p>El token da acceso a tu coche como la app de Tesla: <b>no lo compartas</b>. Glanceboard lo guarda cifrado en tu móvil y solo lo envía a Tesla. Para retirarlo, pulsa <b>Cerrar sesión</b> en Glanceboard o cambia la contraseña de tu cuenta de Tesla.</p></div>
 <p>Con esta opción no necesitas nada de los pasos 1 a 6 de abajo: son solo para la opción B.</p>
