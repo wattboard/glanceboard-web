@@ -80,7 +80,7 @@ ol.steps>li{margin:.35em 0}
 <li>el móvil tiene internet;</li>
 <li>tienes el modo avanzado activado.</li>
 </ol>
-<p>En cuanto el Bluetooth vuelve a dar los datos, deja de consultar. Mientras tanto hace <b>una consulta cada 15 segundos</b>, con la velocidad, la potencia, la marcha y el cuentakilómetros. <b>Nunca pide la ubicación</b>, porque ya la tiene el GPS del móvil, y <b>nunca despierta el coche</b>.</p>
+<p>En cuanto el Bluetooth vuelve a dar los datos, deja de consultar. Mientras tanto hace <b>una consulta cada 15 segundos</b>, con la velocidad, la potencia, la marcha y el cuentakilómetros. <b>Nunca usa ni guarda la ubicación</b>, porque ya la tiene el GPS del móvil, y <b>nunca despierta el coche</b>.</p>
 <p>Sin ruta, el Bluetooth da todos los datos y el modo avanzado no gasta nada.</p>
 
 <h2 id="coste">Cuánto cuesta</h2>
@@ -142,15 +142,19 @@ ol.steps>li{margin:.35em 0}
 <div class="tw"><table>
 <tr><th>Campo</th><th>Qué poner</th></tr>
 <tr><td>Nombre de la aplicación</td><td>El que te propone Glanceboard, por ejemplo <code>Glanceboard-7K3Q</code>. Tesla no admite nombres repetidos.</td></tr>
-<tr><td>Descripción y finalidad de uso</td><td>Descripción: <i>Uso personal con mi propio coche: leer velocidad, potencia y cuentakilómetros cuando el Bluetooth del coche no los envía.</i><br>Finalidad de uso: <i>Uso personal, solo con mi vehículo, con la app Glanceboard: consultas puntuales de vehicle_data cuando el Bluetooth del coche no envía la velocidad y la potencia (por ejemplo, con una ruta puesta). Sin ubicación ni comandos.</i></td></tr>
+<tr><td>Descripción y finalidad de uso</td><td>Descripción: <i>Uso personal con mi propio coche: leer velocidad, potencia y cuentakilómetros cuando el Bluetooth del coche no los envía.</i><br>Finalidad de uso: <i>Uso personal, solo con mi vehículo, con la app Glanceboard: consultas puntuales de vehicle_data cuando el Bluetooth del coche no envía la velocidad y la potencia (por ejemplo, con una ruta puesta). Sin comandos.</i></td></tr>
 <tr><td>URL de origen permitidas</td><td><code>https://tuusuario.github.io</code>, o tu web</td></tr>
 <tr><td>URI de redireccionamiento permitidos</td><td><code>https://tuusuario.github.io/callback/</code>, o la de tu web. Glanceboard te la deja lista para copiar.</td></tr>
-<tr><td>API y ámbitos</td><td>Solo <b>Información del vehículo</b>. <b>No</b> marques información del perfil, ubicación del vehículo, comandos ni gestión de la carga.</td></tr>
+<tr><td>API y ámbitos</td><td><b>Información del vehículo</b> y <b>Ubicación del vehículo</b>. <b>No</b> marques información del perfil, comandos ni gestión de la carga.</td></tr>
 </table></div>
 <figure class="phone"><a href="img/tesla-2-datos.jpg"><img src="img/tesla-2-datos.jpg" alt="Tesla: nombre, descripción y finalidad de uso de la aplicación" loading="lazy"></a><figcaption>Segunda pantalla: nombre, descripción y finalidad de uso.</figcaption></figure>
 <figure class="phone"><a href="img/tesla-3-oauth.jpg"><img src="img/tesla-3-oauth.jpg" alt="Tesla: tipo de concesión OAuth y direcciones permitidas" loading="lazy"></a><figcaption>Tercera pantalla: deja «Código de autorización y comunicación entre sistemas» y escribe tu web y la dirección de vuelta. La URL de retorno se deja vacía.</figcaption></figure>
-<figure class="phone"><a href="img/tesla-4-ambitos.jpg"><img src="img/tesla-4-ambitos.jpg" alt="Tesla: ámbitos, marcar solo Información del vehículo" loading="lazy"></a><figcaption>Cuarta pantalla: marca solo «Información del vehículo».</figcaption></figure></li>
+<figure class="phone"><a href="img/tesla-4-ambitos.jpg"><img src="img/tesla-4-ambitos.jpg" alt="Tesla: ámbitos, marcar Información del vehículo y Ubicación del vehículo" loading="lazy"></a><figcaption>Cuarta pantalla: marca «Información del vehículo» y también «Ubicación del vehículo» (la imagen es anterior y solo muestra la primera).</figcaption></figure></li>
+
 </ol>
+
+<div class="warn"><p><b>Marca también «Ubicación del vehículo».</b> Desde el 24 de noviembre de 2026, Tesla no envía la velocidad, la potencia ni la marcha a las aplicaciones que no tienen ese permiso, aunque tengan «Información del vehículo». Glanceboard no usa ni guarda la ubicación: solo lo necesita para que Tesla mande esos datos.</p>
+<p><b>Si ya habías creado tu aplicación</b>, entra en <a href="https://developer.tesla.com/dashboard">developer.tesla.com/dashboard</a> › tu aplicación › <b>Ver detalles</b> › <b>API y ámbitos</b> › <b>Gestionar</b>, marca <b>Ubicación del vehículo</b> y pulsa <b>Actualizar</b>. Después, en Glanceboard, pulsa <b>Iniciar sesión con Tesla</b> otra vez y acepta el permiso nuevo.</p></div>
 
 <h2 id="paso3"><span class="step">Paso 3</span>Pon la tarjeta y el límite de gasto (9 €)</h2>
 <p class="mut">Ya disponible. Es la última pantalla del alta, <b>Detalles de facturación</b>.</p>
@@ -182,7 +186,7 @@ ol.steps>li{margin:.35em 0}
 <p class="mut">Con la versión de Glanceboard que traiga el modo avanzado.</p>
 <ol class="steps">
 <li>Copia el <b>ID de cliente</b> y el <b>secreto de cliente</b> del paso 4 y pégalos en Glanceboard, en <b>Ajustes › Modo avanzado</b>. Se guardan cifrados en tu móvil y <b>no salen de él</b>.</li>
-<li>Pulsa <b>Iniciar sesión con Tesla</b>. Se abre la página de Tesla: entra con tu cuenta y acepta el permiso de información del vehículo.</li>
+<li>Pulsa <b>Iniciar sesión con Tesla</b>. Se abre la página de Tesla: entra con tu cuenta y acepta los permisos de información y de ubicación del vehículo.</li>
 <li>Glanceboard registra tu web en Tesla, comprueba que todo funciona y te muestra <b>Listo</b>.</li>
 </ol>
 <div class="pend"><b>En desarrollo</b><br>Pantalla «Listo» de Glanceboard con el contador de consultas del mes.</div>
@@ -219,7 +223,7 @@ ol.steps>li{margin:.35em 0}
 <li>Los datos van <b>directamente de Tesla a tu móvil</b>. Ni Glanceboard ni ningún servidor intermedio los ve.</li>
 <li>Tus credenciales y tu sesión de Tesla se guardan <b>cifradas en tu móvil</b>.</li>
 <li>Tu web solo publica la <b>clave pública</b> que Tesla exige. La página de vuelta no guarda nada.</li>
-<li>Glanceboard <b>no pide tu ubicación</b> a Tesla.</li>
+<li>Tesla exige el permiso de ubicación del vehículo para enviar los datos de conducción, pero Glanceboard <b>no usa ni guarda la ubicación</b> que llega de Tesla.</li>
 </ul>
 <p>Más información en la <a href="../../privacy/">política de privacidad</a>. La guía en PDF: <a href="Glanceboard-modo-avanzado.pdf">Glanceboard-modo-avanzado.pdf</a>. Dudas: <a href="mailto:madag.madag@gmail.com">madag.madag@gmail.com</a>.</p>
 <p class="mut">Glanceboard es una app independiente, sin relación con Tesla, Inc. Tesla es una marca de Tesla, Inc. Precios y condiciones de Tesla consultados en noviembre de 2026.</p>
