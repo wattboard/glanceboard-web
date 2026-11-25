@@ -39,7 +39,9 @@ ol.steps>li{margin:.35em 0}
 
 <ul class="toc noprint">
 <li><a href="#que-es">Qué es y para qué sirve</a></li>
-<li><a href="#tesla">Es un servicio de Tesla</a></li>
+<li><a href="#formas">Dos formas de conectarlo</a></li>
+<li><a href="#token">Opción A · Token de Tesla (como TeslaMate)</a></li>
+<li><a href="#tesla">Opción B · Cuenta de desarrollador: es un servicio de Tesla</a></li>
 <li><a href="#cuando">Cuándo se usa</a></li>
 <li><a href="#coste">Cuánto cuesta</a></li>
 <li><a href="#km">Cuántos kilómetros cubre</a></li>
@@ -64,7 +66,32 @@ ol.steps>li{margin:.35em 0}
 </ul>
 <p>El modo avanzado rellena esos huecos. Mientras el Bluetooth no da los datos, Glanceboard se los pide a Tesla por internet. Así el consumo del viaje sale completo.</p>
 
-<h2 id="tesla">Es un servicio de Tesla, bajo su control</h2>
+<h2 id="formas">Dos formas de conectarlo</h2>
+<p>En <b>Ajustes › Modo avanzado › Fuente de datos</b> eliges una:</p>
+<div class="tw"><table>
+<tr><th></th><th>A · Token de Tesla (como TeslaMate)</th><th>B · Cuenta de desarrollador de Tesla</th></tr>
+<tr><td>Qué es</td><td>El mismo acceso que usan TeslaMate, ABRP y otras apps: la API de la app de Tesla.</td><td>La Fleet API, el servicio oficial de Tesla para desarrolladores.</td></tr>
+<tr><td>Configuración</td><td><b>Un minuto</b>: inicias sesión con tu cuenta de Tesla dentro de Glanceboard o pegas un token.</td><td>Unos <b>30 minutos</b>: web en GitHub, aplicación en Tesla, tarjeta y clave (pasos 1 a 6).</td></tr>
+<tr><td>Datos</td><td><b>En directo</b>, más o menos cada segundo, mientras el Bluetooth no los da.</td><td>Una consulta cada 15 segundos.</td></tr>
+<tr><td>Coste y límite</td><td>Gratis, sin límite mensual.</td><td>Gratis hasta 4.500 consultas al mes (descuento de Tesla).</td></tr>
+<tr><td>Riesgo</td><td>No es un servicio oficial: Tesla puede cambiarlo o cerrarlo sin avisar.</td><td>Oficial, con las condiciones y precios de Tesla.</td></tr>
+</table></div>
+<p>Si tienes las dos, puedes cambiar de una a otra cuando quieras sin perder la configuración.</p>
+
+<h2 id="token"><span class="step">Opción A</span>Token de Tesla (como TeslaMate)</h2>
+<p class="mut">Con Glanceboard 105 o posterior.</p>
+<ol class="steps">
+<li>En Glanceboard, abre <b>Ajustes › Modo avanzado</b> y en <b>Fuente de datos</b> elige <b>Token de Tesla (como TeslaMate)</b>.</li>
+<li>Pulsa <b>Iniciar sesión con Tesla</b>. Se abre la página de Tesla dentro de la app: escribe tu correo, tu contraseña y el código de verificación. Glanceboard no ve tu contraseña: la página es de Tesla y la app solo recibe el token que Tesla da al terminar.</li>
+<li>Al volver, verás una marca verde. Activa <b>Usar el modo avanzado</b>.</li>
+</ol>
+<h3>Pegar un token en lugar de iniciar sesión</h3>
+<p>Si ya tienes un <b>token de actualización</b> («refresh token») de Tesla, por ejemplo el que usaste para configurar TeslaMate o uno sacado con una app de tokens de Tesla, pulsa <b>Pegar un token</b>, pégalo y pulsa <b>Usar este token</b>. Es un texto largo que empieza por <code>eyJ</code>.</p>
+<div class="box"><p><b>¿Afecta a TeslaMate?</b> No debería: varias apps pueden usar tokens de la misma cuenta a la vez, como TeslaMate y ABRP. Aun así, lo más limpio es <b>iniciar sesión con Tesla</b> en Glanceboard, que crea su propio token y no toca el de TeslaMate.</p></div>
+<div class="warn"><p>El token da acceso a tu coche como la app de Tesla: <b>no lo compartas</b>. Glanceboard lo guarda cifrado en tu móvil y solo lo envía a Tesla. Para retirarlo, pulsa <b>Cerrar sesión</b> en Glanceboard o cambia la contraseña de tu cuenta de Tesla.</p></div>
+<p>Con esta opción no necesitas nada de los pasos 1 a 6 de abajo: son solo para la opción B.</p>
+
+<h2 id="tesla"><span class="step">Opción B</span>Cuenta de desarrollador: es un servicio de Tesla, bajo su control</h2>
 <div class="warn"><ul style="margin:0;padding-left:1.2em">
 <li>El modo avanzado usa la <b>Fleet API</b>, el servicio oficial de Tesla para desarrolladores. Lo gestiona <b>Tesla</b>: las altas, las aprobaciones, los precios, los límites y la facturación son suyos.</li>
 <li>La cuenta de desarrollador es <b>tuya</b> y la factura, si la hubiera, te la emite <b>Tesla</b>, no Glanceboard. Glanceboard no cobra nada por este modo.</li>
@@ -223,7 +250,8 @@ ol.steps>li{margin:.35em 0}
 <li>Los datos van <b>directamente de Tesla a tu móvil</b>. Ni Glanceboard ni ningún servidor intermedio los ve.</li>
 <li>Tus credenciales y tu sesión de Tesla se guardan <b>cifradas en tu móvil</b>.</li>
 <li>Tu web solo publica la <b>clave pública</b> que Tesla exige. La página de vuelta no guarda nada.</li>
-<li>Tesla exige el permiso de ubicación del vehículo para enviar los datos de conducción, pero Glanceboard <b>no usa ni guarda la ubicación</b> que llega de Tesla.</li>
+<li>Con el <b>token de Tesla</b>, el inicio de sesión se hace en la página de Tesla y Glanceboard solo guarda, cifrado en tu móvil, el token que Tesla devuelve. Los datos van directamente de Tesla a tu móvil.</li>
+<li>Con la cuenta de desarrollador, Tesla exige el permiso de ubicación del vehículo para enviar los datos de conducción, pero Glanceboard <b>no usa ni guarda la ubicación</b> que llega de Tesla.</li>
 </ul>
 <p>Más información en la <a href="../../privacy/">política de privacidad</a>. La guía en PDF: <a href="Glanceboard-modo-avanzado.pdf">Glanceboard-modo-avanzado.pdf</a>. Dudas: <a href="mailto:madag.madag@gmail.com">madag.madag@gmail.com</a>.</p>
 <p class="mut">Glanceboard es una app independiente, sin relación con Tesla, Inc. Tesla es una marca de Tesla, Inc. Precios y condiciones de Tesla consultados en noviembre de 2026.</p>
